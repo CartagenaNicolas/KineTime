@@ -20,3 +20,11 @@ agregarKinesiologo:
 listarKinesiologo:
     path: /listar_kinesiologos
     controller: App\Controller\KinesiologoController::listKinesiologos
+
+agregarPaciente:
+    path: /agregar_paciente
+    controller: App\Controller\PacienteController::addPaciente
+
+listarPaciente:
+    path: /listar_pacientes
+    controller: App\Controller\PacienteController::listPacientes

@@ -1,0 +1,71 @@
+main {
+    padding: 5px;
+}
+
+main .fichas {
+    background: #F5F3F3;
+    border: 1px solid #000;
+    border-radius: 10px;
+    /*margin: 5px;*/
+    padding: 6px;
+    font-weight: bold;
+}
+
+main .fichas .buscador {
+    margin-left: 35%;
+    font-size: 20px;
+}
+
+main .fichas .buscador input[type="submit"] {
+    border: 2px solid #fff;
+    border-radius: 100px;
+    background: #3FA1F1;
+    color: #fff;
+    font-size: 15px;
+    text-decoration: none;
+    padding: 3px 10px;
+}
+
+main .fichas .buscador input[type="submit"]:hover {
+    opacity: .6;
+}
+
+main .fichas .lista {
+    width: 70%;
+    margin: auto;
+    overflow: hidden;
+    margin-top: 30px;
+}
+
+main .fichas .lista .nombre {
+    float: left;
+    width: 25%;
+    text-align: center;
+}
+
+main .fichas .lista .titulo {
+    font-size: 20px;
+    text-decoration: underline;
+}
+
+main .fichas .lista .detalle {
+    font-size: 17px;
+}
+
+main .fichas .lista .edad {
+    float: left;
+    width: 25%;
+    text-align: center;
+}
+
+main .fichas .lista .diagnostico {
+    float: left;
+    width: 25%;
+    text-align: center;
+}
+
+main .fichas .lista .ver-mas {
+    float: left;
+    width: 25%;
+    text-align: center;
+}

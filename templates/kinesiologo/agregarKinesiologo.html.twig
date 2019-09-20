@@ -1,0 +1,108 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+    <link href="{{ asset('assets/css/homeStyle.css') }}" type="text/css" rel="stylesheet" />
+    <link href="{{ asset('assets/css/kinesiologo.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+{% block javascripts %}
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+{% endblock %}
+
+{% block body %}
+    <main>
+        <h2>Ingreso Kinesiólogo</h2>
+        <div class="ficha">
+            <h4>Datos Personales</h4>
+            <div class="datosP">
+                
+                <div class="rut">
+                    <label for="rut">Rut:</label>
+                    <input type="text" id="rut" name="_rut" />
+                </div>
+
+                <div class="nombre">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="_nombre" />
+                </div>
+
+                <div class="especialidad">
+                    <label for="especialidad">Especialidad:</label>
+                    <input type="text" id="especialidad" name="_especialidad" />
+                </div>
+
+                <div class="certificaciones">
+                    <label for="certificaciones">Certificaciones:</label>
+                    <input type="text" id="certificaciones" name="_certificaciones" />
+                </div>
+
+                <div class="anosExperiencia">
+                    <label for="experiencia">Años de experiencia:</label>
+                    <input type="number" id="experiencia" name="_experiencia"/>
+                </div>
+
+                <div class="perfil">
+                    <label for="perfiles">Perfiles</label>
+                    <div class="perfiles" id="perfiles">
+                        <div id="perfil1">
+                            <label for="cbxPer1">Perfil 1</label>
+                            <input type="checkbox" name="_per1" id="cbxPer1" value=""/>
+                        </div>
+                        <div id="perfil2">
+                            <label for="cbxPer2">Perfil 2</label>
+                            <input type="checkbox" name="_per1" id="cbxPer2" value=""/>
+                        </div>
+                        <div id="perfil3">
+                            <label for="cbxPer3">Perfil 3</label>
+                            <input type="checkbox" name="_per1" id="cbxPer3" value=""/>
+                        </div>
+                        <div id="perfil4">
+                            <label for="cbxPer4">Perfil 4</label>
+                            <input type="checkbox" name="_per1" id="cbxPer4" value=""/>
+                        </div>
+                        <div id="perfil5">
+                            <label for="cbxPer5">Perfil 5</label>
+                            <input type="checkbox" name="_per1" id="cbxPer5" value=""/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="area">
+                    <label for="areas">Áreas</label>
+                    <div class="areas" id="areas">
+                        <div id="area1">
+                            <label for="cbxArea1">Área 1</label>
+                            <input type="checkbox" name="_area1" id="cbxArea1" value=""/>
+                        </div>
+                        <div id="area2">
+                            <label for="cbxArea2">Área 2</label>
+                            <input type="checkbox" name="_area2" id="cbxArea2" value=""/>
+                        </div>
+                        <div id="area3">
+                            <label for="cbxArea3">Área 3</label>
+                            <input type="checkbox" name="_area3" id="cbxArea3" value=""/>
+                        </div>
+                        <div id="area4">
+                            <label for="cbxArea4">Área 4</label>
+                            <input type="checkbox" name="_area4" id="cbxArea4" value=""/>
+                        </div>
+                        <div id="area5">
+                            <label for="cbxArea5">Área 5</label>
+                            <input type="checkbox" name="_area5" id="cbxArea5" value=""/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="metas">
+                    <label>Metas:</label>
+                    <textarea id="metas" name="_metas" rows="10" cols="50"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="boton" align="center">
+            <input type="submit" value="Registrar" />
+        </div>
+    </main>
+{% endblock %}

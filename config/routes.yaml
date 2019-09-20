@@ -1,0 +1,22 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+login:
+    path: /
+    controller: App\Controller\KinesiologoController::login
+
+logout:
+    path: /logout
+
+home:
+    path: /home
+    controller: App\Controller\KinesiologoController::home
+
+agregarKinesiologo:
+    path: /agregar_kinesiologo
+    controller: App\Controller\KinesiologoController::addKinesiologo
+
+listarKinesiologo:
+    path: /listar_kinesiologos
+    controller: App\Controller\KinesiologoController::listKinesiologos

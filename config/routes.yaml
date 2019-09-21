@@ -28,3 +28,11 @@ agregarPaciente:
 listarPaciente:
     path: /listar_pacientes
     controller: App\Controller\PacienteController::listPacientes
+
+chat:
+    path: /chats
+    controller: App\Controller\KinesiologoController::chat
+
+agregarEjercicio:
+    path: /agregar-ejercicio
+    controller: App\Controller\KinesiologoController::addEjercicio

@@ -39,17 +39,28 @@ CREATE TABLE examenes(
 CREATE TABLE pacientes(
     id                  int(255) auto_increment not null,
     rut                 char(12) not null,
+    nombre              varchar(255),
+    edad                int(2),
     direccion           varchar(200),
-    cuando_episodio     varchar(200),
+    ocupacion           varchar(200),
+    fumador             char(2),
+    bebedor             char(2),
+    CONSTRAINT pk_pacientes PRIMARY KEY(id)
+)ENGINE=InnoDB;
+
+CREATE TABLE antecedentes_clinicos(
+    id                  int(255) auto_increment not null,
+    paciente_id         int(255) not null,
+    morbilidad          varchar(255),
+    medico              varchar(255),
     zona_id             int(255),
     operacion           varchar(200),
     farmacos            varchar(200),
     factores_riesgo     varchar(200),
-    fumador             char(2),
-    bebedor             char(2),
-    trabajo             varchar(200),
-    CONSTRAINT pk_pacientees PRIMARY KEY(id),
-    CONSTRAINT fk_paciente_zona FOREIGN KEY(zona_id) REFERENCES zona_lesion(id)
+    cuando_episodio     TIME,
+    CONSTRAINT pk_antecedentes_clinicos PRIMARY KEY (id),
+    CONSTRAINT fk_antecedentes_clinicos_pacientes FOREIGN KEY(paciente_id) REFERENCES pacientes(id),
+    CONSTRAINT fk_antecedentes_clinicos_zona FOREIGN KEY(zona_id) REFERENCES zona_lesion(id)
 )ENGINE=InnoDB;
 
 CREATE TABLE mecanismos(
@@ -210,4 +221,11 @@ CREATE TABLE atenciones(
 
 INSERT INTO kinesiologos VALUES (DEFAULT, "11.111.111-1", "admin", "$2y$12$mkQlG3pyfHwf0e12XX/RyusWaQgCLm4C4/fQDIdn2.vvlmCeQxlru", null, 0, 0, null, "ROLE_ADMIN");
 INSERT INTO zona_lesion VALUES (DEFAULT, "Fractura de cubito");
-INSERT INTO pacientes VALUES (DEFAULT, "20492942-4", "Alejandro Casas", 26, "Av. Concha Y Toro 2618", null, 1, null, null, null, null, null, null);
+INSERT INTO zona_lesion VALUES (DEFAULT, "Fractura de metatarso");
+INSERT INTO zona_lesion VALUES (DEFAULT, "Fractura de tibia y perone");
+INSERT INTO zona_lesion VALUES (DEFAULT, "Fractura de tobillo");
+INSERT INTO deportes VALUES (DEFAULT, "Futbol");
+INSERT INTO deportes VALUES (DEFAULT, "Voleibol");
+INSERT INTO deportes VALUES (DEFAULT, "Tennis");
+INSERT INTO deportes VALUES (DEFAULT, "Basketball");
+INSERT INTO pacientes VALUES (DEFAULT, "20492942-4", "Alejandro Casas", 26, "Av. Concha Y Toro 2618", "Programador", "Si", "No");

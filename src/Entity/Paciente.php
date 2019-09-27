@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Pacientes
  *
- * @ORM\Table(name="pacientes", indexes={@ORM\Index(name="fk_paciente_zona", columns={"zona_id"})})
+ * @ORM\Table(name="pacientes")
  * @ORM\Entity
  */
 class Paciente
@@ -29,16 +29,16 @@ class Paciente
     private $rut;
 
     /**
-     * @var string
+     * @var string|null
      *
-     * @ORM\Column(name="nombre", type="string", length=100, nullable=false)
+     * @ORM\Column(name="nombre", type="string", length=255, nullable=true)
      */
     private $nombre;
 
     /**
-     * @var int
+     * @var int|null
      *
-     * @ORM\Column(name="edad", type="integer", nullable=false)
+     * @ORM\Column(name="edad", type="integer", nullable=true)
      */
     private $edad;
 
@@ -52,30 +52,9 @@ class Paciente
     /**
      * @var string|null
      *
-     * @ORM\Column(name="cuando_episodio", type="string", length=200, nullable=true)
+     * @ORM\Column(name="ocupacion", type="string", length=200, nullable=true)
      */
-    private $cuandoEpisodio;
-
-    /**
-     * @var string|null
-     *
-     * @ORM\Column(name="operacion", type="string", length=200, nullable=true)
-     */
-    private $operacion;
-
-    /**
-     * @var string|null
-     *
-     * @ORM\Column(name="farmacos", type="string", length=200, nullable=true)
-     */
-    private $farmacos;
-
-    /**
-     * @var string|null
-     *
-     * @ORM\Column(name="factores_riesgo", type="string", length=200, nullable=true)
-     */
-    private $factoresRiesgo;
+    private $ocupacion;
 
     /**
      * @var string|null
@@ -90,23 +69,6 @@ class Paciente
      * @ORM\Column(name="bebedor", type="string", length=2, nullable=true, options={"fixed"=true})
      */
     private $bebedor;
-
-    /**
-     * @var string|null
-     *
-     * @ORM\Column(name="trabajo", type="string", length=200, nullable=true)
-     */
-    private $trabajo;
-
-    /**
-     * @var \ZonaLesion
-     *
-     * @ORM\ManyToOne(targetEntity="ZonaLesion")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="zona_id", referencedColumnName="id")
-     * })
-     */
-    private $zona;
 
     public function getId(): ?int
     {
@@ -130,7 +92,7 @@ class Paciente
         return $this->nombre;
     }
 
-    public function setNombre(string $nombre): self
+    public function setNombre(?string $nombre): self
     {
         $this->nombre = $nombre;
 
@@ -142,7 +104,7 @@ class Paciente
         return $this->edad;
     }
 
-    public function setEdad(int $edad): self
+    public function setEdad(?int $edad): self
     {
         $this->edad = $edad;
 
@@ -161,50 +123,14 @@ class Paciente
         return $this;
     }
 
-    public function getCuandoEpisodio(): ?string
+    public function getOcupacion(): ?string
     {
-        return $this->cuandoEpisodio;
+        return $this->ocupacion;
     }
 
-    public function setCuandoEpisodio(?string $cuandoEpisodio): self
+    public function setOcupacion(?string $ocupacion): self
     {
-        $this->cuandoEpisodio = $cuandoEpisodio;
-
-        return $this;
-    }
-
-    public function getOperacion(): ?string
-    {
-        return $this->operacion;
-    }
-
-    public function setOperacion(?string $operacion): self
-    {
-        $this->operacion = $operacion;
-
-        return $this;
-    }
-
-    public function getFarmacos(): ?string
-    {
-        return $this->farmacos;
-    }
-
-    public function setFarmacos(?string $farmacos): self
-    {
-        $this->farmacos = $farmacos;
-
-        return $this;
-    }
-
-    public function getFactoresRiesgo(): ?string
-    {
-        return $this->factoresRiesgo;
-    }
-
-    public function setFactoresRiesgo(?string $factoresRiesgo): self
-    {
-        $this->factoresRiesgo = $factoresRiesgo;
+        $this->ocupacion = $ocupacion;
 
         return $this;
     }
@@ -229,30 +155,6 @@ class Paciente
     public function setBebedor(?string $bebedor): self
     {
         $this->bebedor = $bebedor;
-
-        return $this;
-    }
-
-    public function getTrabajo(): ?string
-    {
-        return $this->trabajo;
-    }
-
-    public function setTrabajo(?string $trabajo): self
-    {
-        $this->trabajo = $trabajo;
-
-        return $this;
-    }
-
-    public function getZona(): ?ZonaLesion
-    {
-        return $this->zona;
-    }
-
-    public function setZona(?ZonaLesion $zona): self
-    {
-        $this->zona = $zona;
 
         return $this;
     }

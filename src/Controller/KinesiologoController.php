@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Paciente;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
@@ -31,10 +32,14 @@ class KinesiologoController extends AbstractController
      */
     public function home()
     {
+        // Cargar Repositorio
+        $paciente_repo = $this->getDoctrine()->getRepository(Paciente::class);
+
+        // Consulta
+        $pacientes = $paciente_repo->findAll();
         return $this->render('kinesiologo/home.html.twig', [
             'nombre_kinesiologo' => 'Admin',
-            'nombre_paciente' => 'Mario Verdejo',
-            'edad_paciente' => '22',
+            'Pacientes' => $pacientes,
             'zona_lesion' => 'Antebrazo Derecho',
             'farmacos' => 'Duloxetina, Pregabalina',
         ]);

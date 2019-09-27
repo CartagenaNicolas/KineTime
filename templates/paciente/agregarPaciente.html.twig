@@ -15,97 +15,60 @@
 
 {% block body %}
     <main>
-        <h2>Ficha Kinesica</h2>
-        <div class="ficha">
-            <h3>Datos Personales</h3>
-            <div class="datosP">
-                <div class="rut">
-                    <label for="rut">Rut:</label>
-                    <input type="text" id="rut" name="_rut" />
-                </div>
+        <form action="{{ path('agregarPaciente') }}" method="post">
+            <h2>Ficha Kinesica</h2>
+            <div class="ficha">
 
-                <div class="nombre">
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="_nombre" />
+                <h3>Datos Personales</h3>
+                <div class="datosP">
+                    {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                    {{ form_end(form) }}
                 </div>
+                <hr/>
+                <h3>Antecedentes Clínicos</h3>
+                <div class="antecedentes">
+                    <div class="diagnostico">
+                        <label for="diagnostico">Diagnóstico:</label>
+                        <input type="text" id="diagnostico" name="_Diagnostico" />
+                    </div>
 
-                <div class="edad">
-                    <label for="edad">Edad:</label>
-                    <input type="number" id="edad" name="_edad" />
+                    <div class="morbilidad">
+                        <label for="morbilidad">Morbilidad:</label>
+                        <input type="text" id="morbilidad" name="_Morbilidad" />
+                    </div>
+
+                    <div class="medico">
+                        <label for="medico">Medico:</label>
+                        <input type="text" id="medico" name="_medico" />
+                    </div>
+
+                    <div class="zona">
+                        <label for="zona">Zona Lesion:</label>
+                        <select name="_zona" id="zona">
+                            <option value="0">Seleccione</option>
+                            <option value=""></option>
+                        </select>
+                    </div>
                 </div>
+                <hr/>
+                <h3>Anamnesis - Examen Físico</h3>
+                <div class="examenFisico">
+                    <div class="fecha">
+                        <label for="fecha">Fecha:</label>
+                        <input type="date" id="fecha" name="_fecha" />
+                    </div>
 
-                <div class="direccion">
-                    <label for="rut">Direccion:</label>
-                    <input type="text" id="direccion" name="_direccion" />
-                </div>
-
-                <div class="ocupacion">
-                    <label for="ocupacion">Ocupacion:</label>
-                    <input type="text" id="ocupacion" name="_ocupacion" />
-                </div>
-
-                <div class="deporte">
-                    <label for="deportes">Deportes</label>
-                    <div class="deportes" id="deportes">
-                        <div id="deporte1">
-                            <label for="cbxDep1">Deporte1</label>
-                            <input type="checkbox" name="_dep1" id="cbxDep1" value=""/>
-                        </div>
-                        <div id="deporte2">
-                            <label for="cbxDep2">Deporte2</label>
-                            <input type="checkbox" name="_dep2" id="cbxDep2" value=""/>
-                        </div>
-                        <div id="deporte3">
-                            <label for="cbxDep3">Deporte3</label>
-                            <input type="checkbox" name="_dep3" id="cbxDep3" value=""/>
-                        </div>
-                        <div id="deporte4">
-                            <label for="cbxDep4">Deporte4</label>
-                            <input type="checkbox" name="_dep4" id="cbxPer4" value=""/>
-                        </div>
-                        <div id="deporte5">
-                            <label for="cbxDep5">Otro</label>
-                            <input type="checkbox" name="_dep5" id="cbxDep5" onclick="habilitar('txtDep5')"/>
-                            <input type="text" name="_txtDep5" id="txtDep5" disabled>
-                        </div>
+                    <div class="observaciones">
+                        <label>Observaciones:</label>
+                        <textarea id="obs" name="_obs" rows="10" cols="50"></textarea>
                     </div>
                 </div>
             </div>
-            <hr/>
-            <h3>Antecedentes Clínicos</h3>
-            <div class="antecedentes">
-                <div class="diagnostico">
-                    <label for="diagnostico">Diagnóstico:</label>
-                    <input type="text" id="diagnostico" name="_Diagnostico" />
-                </div>
 
-                <div class="morbilidad">
-                    <label for="morbilidad">Morbilidad:</label>
-                    <input type="text" id="morbilidad" name="_Morbilidad" />
-                </div>
-
-                <div class="medico">
-                    <label for="medico">Medico:</label>
-                    <input type="text" id="medico" name="_medico" />
-                </div>
+            <div class="boton" align="center">
+                <input type="submit" value="Registrar" />
             </div>
-            <hr/>
-            <h3>Anamnesis - Examen Físico</h3>
-            <div class="examenFisico">
-                <div class="fecha">
-                    <label for="fecha">Fecha:</label>
-                    <input type="date" id="fecha" name="_fecha" />
-                </div>
-
-                <div class="observaciones">
-                    <label>Observaciones:</label>
-                    <textarea id="obs" name="_obs" rows="10" cols="50"></textarea>
-                </div>
-            </div>
-        </div>
-
-        <div class="boton" align="center">
-            <input type="submit" value="Registrar" />
-        </div>
+        </form>
     </main>
 {% endblock %}

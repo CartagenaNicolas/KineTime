@@ -24,27 +24,29 @@
                 </div>
                 <div id="collapsePaciente" class="collapse" aria-labelledby="headingPaciente" data-parent="#accordionPaciente">
                     <div class="card-body">
-                        <div class="accordion" id="accordionNombre">
-                            <div class="card">
-                                <div class="card-header" id="headingNombre">
-                                    <h5 class="mb-0">
-                                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseNombre" aria-expanded="true" aria-controls="collapseNombre">
-                                            {{ nombre_paciente }}
-                                        </button>
-                                    </h5>
-                                </div>
-                                <div id="collapseNombre" class="collapse" aria-labelledby="headingNombre" data-parent="#accordionNombre">
-                                    <div class="card-body">
-                                        <ul>
-                                            <li>Edad del Paciente: <b>{{ edad_paciente }}</b></li>
-                                            <li>Zona de la Lesión: <b>{{ zona_lesion }}</b></li>
-                                            <li>Farmacos que consume el paciente: <b>{{ farmacos }}</b></li>
-                                        </ul>
-                                        <img src="{{ asset("assets/img/radiofracture11.jpg") }}" alt="Examen"/>
+                        {% for paciente in Pacientes %}
+                            <div class="accordion" id="accordionNombre">
+                                <div class="card">
+                                    <div class="card-header" id="headingNombre">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseNombre" aria-expanded="true" aria-controls="collapseNombre">
+                                                {{ paciente.nombre }}
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseNombre" class="collapse" aria-labelledby="headingNombre" data-parent="#accordionNombre">
+                                        <div class="card-body">
+                                            <ul>
+                                                <li>Edad del Paciente: <b>{{ paciente.edad }}</b></li>
+                                                <li>Zona de la Lesión: <b>{{ zona_lesion }}</b></li>
+                                                <li>Farmacos que consume el paciente: <b>{{ farmacos }}</b></li>
+                                            </ul>
+                                            <img src="{{ asset("assets/img/radiofracture11.jpg") }}" alt="Examen"/>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>

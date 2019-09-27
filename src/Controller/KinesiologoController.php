@@ -53,10 +53,16 @@ class KinesiologoController extends AbstractController
      */
     public function listKinesiologos()
     {
-        
+        // Cargar Repositorio
+        $kine_repo = $this->getDoctrine()->getRepository(Kinesiologo::class);
+
+        // Consulta
+        $kinesiologos = $kine_repo->findAll();
+
         return $this->render('kinesiologo/listarKinesiologos.html.twig', [
             'nombre_kinesiologo' => 'Alejandro Casas',
             'especialidad' => 'Traumatología',
+            'kinesiologos' => $kinesiologos,
         ]);
     }
 

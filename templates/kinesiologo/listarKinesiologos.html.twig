@@ -20,18 +20,27 @@
                 <input type="submit" value="Enviar"/>
             </div>
             <div class="lista">
-                <div class="nombre">
-                    <p class="titulo">Nombres</p>
-                    <p class="detalle">{{ nombre_kinesiologo }}</p>
-                </div>
-                <div class="especialidad">
-                    <p class="titulo">Especialidad</p>
-                    <p class="detalle">{{ especialidad }}</p>
-                </div>
-                <div class="ver-mas">
-                    <p class="titulo">Ficha</p>
-                    <p class="detalle"><a href="#">Ver Más</a></p>
-                </div>
+                {{ dump(kinesiologos) }}
+                {% for kinesiologo in kinesiologos %}
+                    <div class="nombre">
+                        <p class="titulo">Nombres</p>
+                        <p class="detalle">
+                            {% if kinesiologo.nombre == "admin" %}
+                                 Administrador
+                            {% else %}
+                                {{ kinesiologo.nombre }}
+                            {% endif %}
+                        </p>
+                    </div>
+                    <div class="especialidad">
+                        <p class="titulo">Especialidad</p>
+                        <p class="detalle">{{ kinesiologo.especialidad }}</p>
+                    </div>
+                    <div class="ver-mas">
+                        <p class="titulo">Ficha</p>
+                        <p class="detalle"><a href="#">Ver Más</a></p>
+                    </div>
+                {% endfor %}
             </div>
         </div>
     </main>

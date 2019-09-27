@@ -209,3 +209,5 @@ CREATE TABLE atenciones(
 )ENGINE=InnoDB;
 
 INSERT INTO kinesiologos VALUES (DEFAULT, "11.111.111-1", "admin", "$2y$12$mkQlG3pyfHwf0e12XX/RyusWaQgCLm4C4/fQDIdn2.vvlmCeQxlru", null, 0, 0, null, "ROLE_ADMIN");
+INSERT INTO zona_lesion VALUES (DEFAULT, "Fractura de cubito");
+INSERT INTO pacientes VALUES (DEFAULT, "20492942-4", "Alejandro Casas", 26, "Av. Concha Y Toro 2618", null, 1, null, null, null, null, null, null);

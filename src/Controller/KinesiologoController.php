@@ -53,6 +53,7 @@ class KinesiologoController extends AbstractController
      */
     public function listKinesiologos()
     {
+        
         return $this->render('kinesiologo/listarKinesiologos.html.twig', [
             'nombre_kinesiologo' => 'Alejandro Casas',
             'especialidad' => 'Traumatología',

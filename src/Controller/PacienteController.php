@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\ZonaLesion;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Paciente;
@@ -23,10 +24,18 @@ class PacienteController extends AbstractController
      */
     public function listPacientes()
     {
+        // Cargar repositorio
+        $paciente_repo = $this->getDoctrine()->getRepository(Paciente::class);
+        $zona_repo = $this->getDoctrine()->getRepository(ZonaLesion::class);
+
+        // Consulta
+        $pacientes = $paciente_repo->findAll();
+        $zonas = $zona_repo->findAll();
+
+        // Comprobar si el resultado es correcto
+
         return $this->render('paciente/listarPaciente.html.twig', [
-            'nombre_paciente' => 'Manuel Rodriguez',
-            'edad' => '25',
-            'diagnostico' => 'Fractura del cúbito',
+            'pacientes' => $pacientes,
         ]);
     }
 }

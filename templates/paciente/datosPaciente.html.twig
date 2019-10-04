@@ -1,0 +1,29 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+    <link href="{{ asset('assets/css/homeStyle.css') }}" type="text/css" rel="stylesheet" />
+    <link href="{{ asset('assets/css/listarPaciente.css') }}" type="text/css" rel="stylesheet"/>
+{% endblock %}
+
+{% block body %}
+    <main>
+        <h2>{{ paciente.nombre }}</h2>
+        <div class="fichas">
+            <h4>Rut del paciente: {{ paciente.rut }}</h4>
+            <h4>Edad del paciente: {{ paciente.edad }}</h4>
+            <h4>Dirección del paciente: {{ paciente.direccion }}</h4>
+            <h4>Ocupación del paciente: {{ paciente.ocupacion }}</h4>
+            {% if paciente.fumador == "Si" %}
+                <h4>El Paciente es Fumador</h4>
+            {% else %}
+                <h4>El Paciente no es Fumador</h4>
+            {% endif %}
+            {% if paciente.bebedor == "Si" %}
+                <h4>El Paciente es Bebedor</h4>
+            {% else %}
+                <h4>El Paciente no es Bebedor</h4>
+            {% endif %}
+        </div>
+    </main>
+{% endblock %}

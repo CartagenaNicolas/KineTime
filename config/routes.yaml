@@ -34,5 +34,11 @@ chat:
     controller: App\Controller\KinesiologoController::chat
 
 agregarEjercicio:
-    path: /agregar-ejercicio
+    path: /agregar_ejercicio
     controller: App\Controller\KinesiologoController::addEjercicio
+
+datosPaciente:
+    path: /datos_paciente/{paciente}
+    controller: App\Controller\PacienteController::dataPaciente
+    defaults:
+        paciente: 0

@@ -10,6 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Paciente;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use App\Form\PacienteType;
+use App\Entity\AntecedenteClinico;
 
 class PacienteController extends AbstractController
 {
@@ -45,14 +46,33 @@ class PacienteController extends AbstractController
     {
         // Cargar repositorio
         $paciente_repo = $this->getDoctrine()->getRepository(Paciente::class);
+        $antecedente_repo = $this->getDoctrine()->getRepository(AntecedenteClinico::class);
         $zona_repo = $this->getDoctrine()->getRepository(ZonaLesion::class);
 
         // Consulta
         $pacientes = $paciente_repo->findAll();
+        $antecedentes = $antecedente_repo->findAll();
         $zonas = $zona_repo->findAll();
 
         return $this->render('paciente/listarPaciente.html.twig', [
             'pacientes' => $pacientes,
+            'antecedentes' => $antecedentes,
+        ]);
+    }
+
+    /**
+     * @IsGranted("ROLE_USER")
+     */
+    public function dataPaciente($paciente)
+    {
+        // Cargar repositorio
+        $paciente_repo = $this->getDoctrine()->getRepository(Paciente::class);
+
+        // Consulta
+        $datos_paciente = $paciente_repo->find($paciente);
+
+        return $this->render('paciente/datosPaciente.html.twig', [
+            'paciente' => $datos_paciente
         ]);
     }
 }

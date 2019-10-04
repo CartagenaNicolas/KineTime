@@ -28,6 +28,11 @@ class ZonaLesion
      */
     private $nombre;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\AntecedenteClinico", mappedBy="zona")
+     */
+    private $antecedenteClinico;
+
     public function getId(): ?int
     {
         return $this->id;

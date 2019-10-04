@@ -229,3 +229,4 @@ INSERT INTO deportes VALUES (DEFAULT, "Voleibol");
 INSERT INTO deportes VALUES (DEFAULT, "Tennis");
 INSERT INTO deportes VALUES (DEFAULT, "Basketball");
 INSERT INTO pacientes VALUES (DEFAULT, "20492942-4", "Alejandro Casas", 26, "Av. Concha Y Toro 2618", "Programador", "Si", "No");
+INSERT INTO antecedentes_clinicos VALUES (DEFAULT, "1", "No se que es", "Kevin Pizarro", 1, "No", "Paracetamol", "no se", NOW());

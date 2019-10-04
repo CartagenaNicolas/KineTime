@@ -22,20 +22,28 @@
             <div class="lista">
                 {% for paciente in pacientes %}
                     <div class="nombre">
-                        <p class="titulo">Nombres</p>
+                        {% if paciente.id == 1 %}
+                            <p class="titulo">Nombres</p>
+                        {% endif %}
                         <p class="detalle">{{ paciente.nombre }}</p>
                     </div>
                     <div class="edad">
-                        <p class="titulo">Edad</p>
+                        {% if paciente.id == 1 %}
+                            <p class="titulo">Edad</p>
+                        {% endif %}
                         <p class="detalle">{{ paciente.edad }}</p>
                     </div>
                     <div class="diagnostico">
-                        <p class="titulo">Diagnóstico</p>
-                        <p class="detalle">{{ paciente.zona.nombre }}</p>
+                        {% if paciente.id == 1 %}
+                            <p class="titulo">Ocupación</p>
+                        {% endif %}
+                        <p class="detalle">{{ paciente.ocupacion }}</p>
                     </div>
                     <div class="ver-mas">
-                        <p class="titulo">Ficha</p>
-                        <p class="detalle"><a href="#">Ver Más</a></p>
+                        {% if paciente.id == 1 %}
+                            <p class="titulo">Ficha</p>
+                        {% endif %}
+                        <p class="detalle"><a href="{{ path('datosPaciente')}}{{ "/" }}{{ paciente.id }}">Ver Más</a></p>
                     </div>
                 {% endfor %}
             </div>

@@ -9,7 +9,7 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Kinesiologo;
-use App\Form\RegisterType;
+use App\Form\KinesiologoType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 class KinesiologoController extends AbstractController
@@ -48,9 +48,24 @@ class KinesiologoController extends AbstractController
     /**
      * @IsGranted("ROLE_USER")
      */    
-    public function addKinesiologo()
+    public function addKinesiologo(Request $request)
     {
-        return $this->render('kinesiologo/agregarKinesiologo.html.twig');
+        $kinesiologo = new Kinesiologo();
+        $form = $this->createForm(KinesiologoType::class, $kinesiologo);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($kinesiologo);
+            $em->flush();
+
+            return $this->redirect($this->generateUrl('home'));
+        }
+
+        return $this->render('kinesiologo/agregarKinesiologo.html.twig', [
+            'form' => $form->createView()
+        ]);
     }
 
     /**

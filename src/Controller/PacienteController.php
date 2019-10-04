@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Entity\Deporte;
 use App\Entity\Deportes;
 use App\Entity\ZonaLesion;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;

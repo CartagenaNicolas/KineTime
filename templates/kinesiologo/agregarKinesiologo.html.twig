@@ -17,92 +17,10 @@
         <div class="ficha">
             <h4>Datos Personales</h4>
             <div class="datosP">
-                
-                <div class="rut">
-                    <label for="rut">Rut:</label>
-                    <input type="text" id="rut" name="_rut" />
-                </div>
-
-                <div class="nombre">
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="_nombre" />
-                </div>
-
-                <div class="especialidad">
-                    <label for="especialidad">Especialidad:</label>
-                    <input type="text" id="especialidad" name="_especialidad" />
-                </div>
-
-                <div class="certificaciones">
-                    <label for="certificaciones">Certificaciones:</label>
-                    <input type="text" id="certificaciones" name="_certificaciones" />
-                </div>
-
-                <div class="anosExperiencia">
-                    <label for="experiencia">Años de experiencia:</label>
-                    <input type="number" id="experiencia" name="_experiencia"/>
-                </div>
-
-                <div class="perfil">
-                    <label for="perfiles">Perfiles</label>
-                    <div class="perfiles" id="perfiles">
-                        <div id="perfil1">
-                            <label for="cbxPer1">Perfil 1</label>
-                            <input type="checkbox" name="_per1" id="cbxPer1" value=""/>
-                        </div>
-                        <div id="perfil2">
-                            <label for="cbxPer2">Perfil 2</label>
-                            <input type="checkbox" name="_per1" id="cbxPer2" value=""/>
-                        </div>
-                        <div id="perfil3">
-                            <label for="cbxPer3">Perfil 3</label>
-                            <input type="checkbox" name="_per1" id="cbxPer3" value=""/>
-                        </div>
-                        <div id="perfil4">
-                            <label for="cbxPer4">Perfil 4</label>
-                            <input type="checkbox" name="_per1" id="cbxPer4" value=""/>
-                        </div>
-                        <div id="perfil5">
-                            <label for="cbxPer5">Perfil 5</label>
-                            <input type="checkbox" name="_per1" id="cbxPer5" value=""/>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="area">
-                    <label for="areas">Áreas</label>
-                    <div class="areas" id="areas">
-                        <div id="area1">
-                            <label for="cbxArea1">Área 1</label>
-                            <input type="checkbox" name="_area1" id="cbxArea1" value=""/>
-                        </div>
-                        <div id="area2">
-                            <label for="cbxArea2">Área 2</label>
-                            <input type="checkbox" name="_area2" id="cbxArea2" value=""/>
-                        </div>
-                        <div id="area3">
-                            <label for="cbxArea3">Área 3</label>
-                            <input type="checkbox" name="_area3" id="cbxArea3" value=""/>
-                        </div>
-                        <div id="area4">
-                            <label for="cbxArea4">Área 4</label>
-                            <input type="checkbox" name="_area4" id="cbxArea4" value=""/>
-                        </div>
-                        <div id="area5">
-                            <label for="cbxArea5">Área 5</label>
-                            <input type="checkbox" name="_area5" id="cbxArea5" value=""/>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="metas">
-                    <label>Metas:</label>
-                    <textarea id="metas" name="_metas" rows="10" cols="50"></textarea>
-                </div>
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                {{ form_end(form) }}
             </div>
-        </div>
-        <div class="boton" align="center">
-            <input type="submit" value="Registrar" />
         </div>
     </main>
 {% endblock %}

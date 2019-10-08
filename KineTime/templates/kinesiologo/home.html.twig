@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+    <link href="{{ asset('assets/css/homeStyle.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+{% block javascripts %}
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+{% endblock %} 
+
+{% block body %}
+    <main>
+        <h1>Bienvenido {{ nombre_kinesiologo }}</h1>
+        <div class="accordion" id="accordionPaciente">
+            <div class="card">
+                <div class="card-header" id="headingPaciente">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapsePaciente" aria-expanded="true" aria-controls="collapsePaciente">
+                            Pacientes
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapsePaciente" class="collapse" aria-labelledby="headingPaciente" data-parent="#accordionPaciente">
+                    <div class="card-body">
+                        {% for paciente in Pacientes %}
+                            <div class="accordion" id="accordionNombre">
+                                <div class="card">
+                                    <div class="card-header" id="headingNombre">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseNombre" aria-expanded="true" aria-controls="collapseNombre">
+                                                {{ paciente.nombre }}
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseNombre" class="collapse" aria-labelledby="headingNombre" data-parent="#accordionNombre">
+                                        <div class="card-body">
+                                            <ul>
+                                                <li>Edad del Paciente: <b>{{ paciente.edad }}</b></li>
+                                                <li>Zona de la Lesión: <b>{{ zona_lesion }}</b></li>
+                                                <li>Farmacos que consume el paciente: <b>{{ farmacos }}</b></li>
+                                            </ul>
+                                            <img src="{{ asset("assets/img/radiofracture11.jpg") }}" alt="Examen"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}

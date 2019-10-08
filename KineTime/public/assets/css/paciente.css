@@ -1,0 +1,134 @@
+main h2 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+main .ficha {
+    background: #F5F3F3;
+    border: 1px solid #000;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 6px;
+}
+
+main .ficha .datosP {
+    margin: 10px;
+    padding: 0 50px;
+    overflow: hidden;
+}
+
+main .ficha .datosP label {
+    font-weight: bold;
+    font-size: 20px;
+    vertical-align: top;
+}
+
+main .ficha .datosP .rut {
+    margin-top: 30px;
+    margin-left: 65px;
+    float: left;
+}
+
+main .ficha .datosP .nombre {
+    margin-top: 30px;
+    margin-left: 65px;
+    float: left;
+}
+
+main .ficha .datosP .edad {
+    margin-top: 30px;
+    margin-left: 65px;
+    float: left;
+}
+
+main .ficha .datosP .direccion {
+    margin-top: 30px;
+    margin-left: 140px;
+    float: left;
+}
+
+main .ficha .datosP .ocupacion {
+    margin-top: 30px;
+    margin-left: 65px;
+    float: left;
+}
+
+main .ficha .datosP .deporte {
+    float: left;
+    margin-top: 30px;
+    margin-left: 380px;
+}
+
+main .ficha .datosP .deporte .deportes {
+    margin-left: 40px;
+}
+
+main .ficha .datosP input {
+    margin-left: 15px;
+}
+
+main .ficha .antecedentes {
+    margin: 10px;
+    padding: 0 50px;
+    overflow: hidden;
+}
+
+main .ficha .antecedentes label {
+    font-weight: bold;
+    font-size: 20px;
+    vertical-align: top;
+}
+
+main .ficha .antecedentes .diagnostico {
+    margin-top: 30px;
+    margin-left: 65px;
+    float: left;
+}
+
+main .ficha .antecedentes .morbilidad {
+    margin-top: 30px;
+    margin-left: 65px;
+    float: left;
+}
+
+main .ficha .antecedentes .medico {
+    margin-top: 30px;
+    margin-left: 65px;
+    float: left;
+}
+
+main .ficha .examenFisico {
+    margin: 10px;
+    padding: 0 50px;
+    overflow: hidden;
+}
+
+main .ficha .examenFisico label {
+    font-weight: bold;
+    font-size: 20px;
+    vertical-align: top;
+}
+
+main .ficha .examenFisico .fecha {
+    margin-left: 360px;
+}
+
+main .ficha .examenFisico .observaciones {
+    margin-left: 170px;
+}
+
+main .boton input {
+    border: 2px solid #ffff;
+    border-radius: 100px;
+    background: #5FCE27;
+    color: #fff;
+    font-size: 25px;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    margin: 10px 10px;
+}
+
+main .boton input:hover {
+    opacity: .6;
+}

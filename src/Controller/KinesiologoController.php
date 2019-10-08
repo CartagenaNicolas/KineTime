@@ -105,8 +105,5 @@ class KinesiologoController extends AbstractController
     /**
      * @IsGranted("ROLE_USER")
      */
-    public  function addEjercicio()
-    {
-        return $this->render('kinesiologo/agregarEjercicio.html.twig');
-    }
+    
 }

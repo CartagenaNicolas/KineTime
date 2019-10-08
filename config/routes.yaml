@@ -35,7 +35,7 @@ chat:
 
 agregarEjercicio:
     path: /agregar_ejercicio
-    controller: App\Controller\KinesiologoController::addEjercicio
+    controller: App\Controller\EjercicioController::addEjercicio
 
 datosPaciente:
     path: /datos_paciente/{paciente}

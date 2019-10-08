@@ -23,7 +23,9 @@
                 {{ dump(kinesiologos) }}
                 {% for kinesiologo in kinesiologos %}
                     <div class="nombre">
-                        <p class="titulo">Nombres</p>
+                        {% if kinesiologo.id == 1 %}
+                            <p class="titulo">Nombres</p>
+                        {% endif %}
                         <p class="detalle">
                             {% if kinesiologo.nombre == "admin" %}
                                  Administrador
@@ -33,11 +35,15 @@
                         </p>
                     </div>
                     <div class="especialidad">
-                        <p class="titulo">Especialidad</p>
+                        {% if kinesiologo.id == 1 %}
+                            <p class="titulo">Especialidad</p>
+                        {% endif %}
                         <p class="detalle">{{ kinesiologo.especialidad }}</p>
                     </div>
                     <div class="ver-mas">
-                        <p class="titulo">Ficha</p>
+                        {% if kinesiologo.id == 1 %}
+                            <p class="titulo">Ficha</p>
+                        {% endif %}
                         <p class="detalle"><a href="#">Ver Más</a></p>
                     </div>
                 {% endfor %}

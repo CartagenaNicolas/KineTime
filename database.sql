@@ -155,6 +155,8 @@ CREATE TABLE tipo_ejercicios(
     id              int(255) auto_increment not null,
     nombre          varchar(50),
     tipo            varchar(50),
+    objetivo        varchar(50),
+    url             varchar(100),
     CONSTRAINT pk_tipo_ejercicios PRIMARY KEY(id)
 )ENGINE=InnoDB;
 
@@ -167,14 +169,10 @@ CREATE TABLE volumenes(
 
 CREATE TABLE ejercicios(
     id                      int(255) auto_increment not null,
-    secuencia_ejercicio     varchar(50),
     tiempo                  TIME,
     volumen                 int(255) not null,
-    carga                   varchar(50),
-    objetivo                varchar(50),
     tipo_ejercicio          int(255) not null,
     descanso                int(255),
-    url                     varchar(100),
     CONSTRAINT pk_ejercicios PRIMARY KEY(id),
     CONSTRAINT fk_ejecicio_volumenes FOREIGN KEY(volumen) REFERENCES volumenes(id),
     CONSTRAINT fk_ejercicio_tipo_ejercicios FOREIGN KEY(tipo_ejercicio) REFERENCES tipo_ejercicios(id)

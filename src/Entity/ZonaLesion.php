@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -33,6 +35,11 @@ class ZonaLesion
      */
     private $antecedenteClinico;
 
+    public function __construct()
+    {
+        $this->antecedenteClinico = new ArrayCollection();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -46,6 +53,37 @@ class ZonaLesion
     public function setNombre(string $nombre): self
     {
         $this->nombre = $nombre;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|AntecedenteClinico[]
+     */
+    public function getAntecedenteClinico(): Collection
+    {
+        return $this->antecedenteClinico;
+    }
+
+    public function addAntecedenteClinico(AntecedenteClinico $antecedenteClinico): self
+    {
+        if (!$this->antecedenteClinico->contains($antecedenteClinico)) {
+            $this->antecedenteClinico[] = $antecedenteClinico;
+            $antecedenteClinico->setZona($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAntecedenteClinico(AntecedenteClinico $antecedenteClinico): self
+    {
+        if ($this->antecedenteClinico->contains($antecedenteClinico)) {
+            $this->antecedenteClinico->removeElement($antecedenteClinico);
+            // set the owning side to null (unless already changed)
+            if ($antecedenteClinico->getZona() === $this) {
+                $antecedenteClinico->setZona(null);
+            }
+        }
 
         return $this;
     }

@@ -42,3 +42,9 @@ datosPaciente:
     controller: App\Controller\PacienteController::dataPaciente
     defaults:
         paciente: 0
+
+planificacionEjercicios:
+    path: /planificacion_ejercicio/{paciente}
+    controller: App\Controller\PacienteController::planificacionPaciente
+    defaults:
+        paciente: 0

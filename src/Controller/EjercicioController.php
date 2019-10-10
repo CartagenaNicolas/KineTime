@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Ejercicio;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\TipoEjercicio;
@@ -22,15 +23,15 @@ class EjercicioController extends AbstractController
     public  function addEjercicio(Request $request)
     {
         //Para definir el tamaño maximo de los archivos modificar el archivo php.ini
-        $tipoEjercicio = new TipoEjercicio();
+        $ejercicio = new Ejercicio();
 
-        $form = $this->createForm(EjercicioType::class, $tipoEjercicio);
+        $form = $this->createForm(EjercicioType::class, $ejercicio);
 
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid())
         {
-            $video = $tipoEjercicio->getVideo();
+            $video = $ejercicio->getVideo();
             
             $upload_directory = $this->getParameter('uploads_directory');
 
@@ -41,10 +42,10 @@ class EjercicioController extends AbstractController
                 $filename
             );
 
-            $tipoEjercicio->setUrl("uploads/" . $filename);
+            $ejercicio->setUrl("uploads/" . $filename);
             
             $em = $this->getDoctrine()->getManager();
-            $em->persist($tipoEjercicio);
+            $em->persist($ejercicio);
             $em->flush();
         }
 

@@ -1,7 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8a72b3fa-fce4-4b18-9d66-c1e2c1df9018" name="Default Changelist" comment="" />
+    <list default="true" id="8a72b3fa-fce4-4b18-9d66-c1e2c1df9018" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/.env" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/.env.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/.idea/KineTime.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/.idea/php.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/.idea/symfony2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/.vs/KineTime/v16/.suo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/.vs/VSWorkspaceState.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/.vs/slnx.sqlite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/bin/console" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/bin/phpunit" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/composer.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/config/bootstrap.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/config/bundles.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/config/packages/cache.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/config/packages/dev/debug.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/config/packages/dev/easy_log_handler.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/config/packages/dev/monolog.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/config/packages/dev/routing.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/config/packages/dev/swiftmailer.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/config/packages/dev/web_profiler.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/config/packages/doctrine.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/config/packages/doctrine_migrations.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/config/packages/framework.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/config/packages/prod/doctrine.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/config/packages/prod/monolog.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/config/packages/routing.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/config/packages/security.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/config/packages/sensio_framework_extra.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/config/packages/swiftmailer.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/config/packages/test/framework.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/config/packages/test/monolog.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/config/packages/test/routing.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/config/packages/test/swiftmailer.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/config/packages/test/validator.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/config/packages/test/web_profiler.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/config/packages/translation.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/config/packages/twig.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/config/packages/validator.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/config/routes.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/config/routes/annotations.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/config/routes/dev/twig.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/config/routes/dev/web_profiler.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/config/services.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/database.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/phpunit.xml.dist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/public/.htaccess" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/public/assets/css/agregarEjercicio.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/public/assets/css/chats.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/public/assets/css/homeStyle.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/public/assets/css/kinesiologo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/public/assets/css/listarKinesiologo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/public/assets/css/listarPaciente.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/public/assets/css/paciente.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/public/assets/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/public/assets/img/Logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/public/assets/img/facetime-button.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/public/assets/img/radiofracture11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/public/assets/js/nuevoPaciente.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/public/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/public/uploads/72830f573159019e10ac16202a5b1ef7.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/src/Controller/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/src/Controller/EjercicioController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/src/Controller/KinesiologoController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/src/Controller/PacienteController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/src/Entity/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/src/Entity/AntecedenteClinico.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/src/Entity/Deporte.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/src/Entity/DeportesHasPacientes.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/src/Entity/Kinesiologo.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/src/Entity/Paciente.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/src/Entity/PacientesHasEnfermedades.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/src/Entity/PacientesHasExamenes.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/src/Entity/PacientesHasHobbies.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/src/Entity/TipoEjercicio.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/src/Entity/ZonaLesion.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/src/Form/EjercicioType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/src/Form/KinesiologoType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/src/Form/PacienteType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/src/Kernel.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/src/Migrations/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/src/Repository/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/symfony.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/templates/base.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/templates/ejercicio/agregarEjercicio.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/templates/ejercicio/index.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/templates/kinesiologo/agregarKinesiologo.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/templates/kinesiologo/chat.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/templates/kinesiologo/detallesFicha.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/templates/kinesiologo/home.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/templates/kinesiologo/index.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/templates/kinesiologo/listarKinesiologos.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/templates/kinesiologo/login.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/templates/paciente/agregarPaciente.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/templates/paciente/datosPaciente.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/templates/paciente/listarPaciente.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/tests/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KineTime/translations/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/EjercicioController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EjercicioController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/PacienteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PacienteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/TipoEjercicio.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/EjercicioType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/EjercicioType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/RegisterType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/paciente/datosPaciente.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/paciente/datosPaciente.html.twig" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +141,17 @@
     </option>
     <expand />
     <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -139,10 +264,17 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1R00BmBb1pns1q06dV5Z9t05sub" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -193,5 +325,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/Form/EjercicioType.php</url>
+          <line>3</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

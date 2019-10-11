@@ -7,6 +7,8 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use App\Entity\TipoEjercicio;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class EjercicioType extends AbstractType {
 
@@ -15,8 +17,10 @@ class EjercicioType extends AbstractType {
         $builder->add('nombre', TextType::class, array(
             'label' => 'Nombre del ejercicio:'
         ))
-        ->add('tipo', TextType::class, array(
-            'label' => 'Tipo de ejercicio'
+        ->add('tipoEjercicio', EntityType::class, array(
+            'label' => 'Tipo de ejercicio',
+            'class' => TipoEjercicio::class,
+            'choice_label' => 'descripcion'
         ))
         ->add('objetivo', TextareaType::class, array(
             'label' => 'Objetivo del ejercicio'

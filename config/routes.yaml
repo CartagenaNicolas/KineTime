@@ -42,3 +42,21 @@ datosPaciente:
     controller: App\Controller\PacienteController::dataPaciente
     defaults:
         paciente: 0
+
+planificacionEjercicios:
+    path: /planificacion_ejercicio/{paciente}
+    controller: App\Controller\PacienteController::planificacionPaciente
+    defaults:
+        paciente: 0
+
+mantenedorEjercicios:
+    path: /gestion_ejercicios
+    controller: App\Controller\EjercicioController::listarEjercicios
+
+editarEjercicio:
+    path: /editar_ejercicio/{id}
+    controller: App\Controller\EjercicioController:edit
+
+eliminarEjercicio:
+    path: /tarea/delete/{id}
+    controller: App\Controller\EjercicioController:delete

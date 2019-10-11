@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\Deportes;
+use App\Entity\Ejercicio;
+use App\Entity\TipoEjercicio;
 use App\Entity\ZonaLesion;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -73,6 +75,24 @@ class PacienteController extends AbstractController
 
         return $this->render('paciente/datosPaciente.html.twig', [
             'paciente' => $datos_paciente
+        ]);
+    }
+
+    public function planificacionPaciente($paciente)
+    {
+        // Carga repositorio
+        $ejercicios_repo = $this->getDoctrine()->getRepository(Ejercicio::class);
+        $paciente_repo = $this->getDoctrine()->getRepository(Paciente::class);
+        $tipoEjercicio_repo = $this->getDoctrine()->getRepository(TipoEjercicio::class);
+
+        // Consulta
+        $ejercicios = $ejercicios_repo->findAll();
+        $datosPaciente = $paciente_repo->find($paciente);
+        $tipoEjercicio = $tipoEjercicio_repo->findAll();
+
+        return $this->render('paciente/planificacionPaciente.html.twig', [
+            'paciente' => $datosPaciente,
+            'ejercicios' => $ejercicios
         ]);
     }
 }

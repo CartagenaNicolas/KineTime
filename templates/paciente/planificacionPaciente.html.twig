@@ -1,0 +1,165 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link href="{{ asset('assets/css/homeStyle.css') }}" type="text/css" rel="stylesheet" />
+    <link href="{{ asset('assets/css/planificacion.css') }}" type="text/css" rel="stylesheet"/>
+{% endblock %}
+
+{% block body %}
+<main>
+    <h2>Planificacion del Paciente {{ paciente.nombre }}</h2>
+    <div class="planificacion">
+        <div class="ejercicios">
+            <div class="accordion" id="ejercicio">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Grupo de ejercicios Brazo
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#ejercicio">
+                        <div class="card-body">
+                            <div class="columns">
+                                {% for ejercicio in ejercicios %}
+                                    {% if ejercicio.tipoEjercicio.descripcion == "Brazo" %}
+                                        <div class="column" draggable="true" name="{{ ejercicio.nombre }}" id="{{ ejercicio.id }}" ondragstart="drag(event)">{{ ejercicio.nombre }}</div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion" id="ejercicio">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Grupo de ejercicios Pierna
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#ejercicio">
+                        <div class="card-body">
+                            <div class="columns">
+                                {% for ejercicio in ejercicios %}
+                                    {% if ejercicio.tipoEjercicio.descripcion == "Pierna" %}
+                                        <div class="column" draggable="true" name="{{ ejercicio.nombre }}" id="{{ ejercicio.id }}" ondragstart="drag(event)">{{ ejercicio.nombre }}</div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion" id="ejercicio">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Grupo de ejercicios Antebrazo
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#ejercicio">
+                        <div class="card-body">
+                            <div class="columns">
+                                {% for ejercicio in ejercicios %}
+                                    {% if ejercicio.tipoEjercicio.descripcion == "Antebrazo" %}
+                                        <div class="column" draggable="true" name="{{ ejercicio.nombre }}" id="{{ ejercicio.id }}" ondragstart="drag(event)">{{ ejercicio.nombre }}</div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion" id="ejercicio">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Grupo de ejercicios Hombro
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#ejercicio">
+                        <div class="card-body">
+                            <div class="columns">
+                                {% for ejercicio in ejercicios %}
+                                    {% if ejercicio.tipoEjercicio.descripcion == "Hombro" %}
+                                        <div class="column" draggable="true" name="{{ ejercicio.nombre }}" id="{{ ejercicio.id }}" ondragstart="drag(event)">{{ ejercicio.nombre }}</div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion" id="ejercicio">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Grupo de ejercicios Pie
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#ejercicio">
+                        <div class="card-body">
+                            <div class="columns">
+                                {% for ejercicio in ejercicios %}
+                                    {% if ejercicio.tipoEjercicio.descripcion == "Pie" %}
+                                        <div class="column" draggable="true" name="{{ ejercicio.nombre }}" id="{{ ejercicio.id }}" ondragstart="drag(event)">{{ ejercicio.nombre }}</div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion" id="ejercicio">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Grupo de ejercicios Muñeca
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#ejercicio">
+                        <div class="card-body">
+                            <div class="columns">
+                                {% for ejercicio in ejercicios %}
+                                    {% if ejercicio.tipoEjercicio.descripcion == "Muñeca" %}
+                                        <div class="column" draggable="true" name="{{ ejercicio.nombre }}" id="{{ ejercicio.id }}" ondragstart="drag(event)">{{ ejercicio.nombre }}</div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="receptores">
+            <div class="sesion" id="sesion 1" ondrop="drop(event)" ondragover="allowDrop(event)">
+
+            </div>
+            <div class="sesion"></div>
+            <div class="sesion"></div>
+        </div>
+    </div>
+</main>
+{% endblock %}

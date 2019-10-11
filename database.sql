@@ -185,6 +185,15 @@ CREATE TABLE rutinas(
     CONSTRAINT pk_rutinas PRIMARY KEY(id)
 )ENGINE=InnoDB;
 
+CREATE TABLE pacientes_has_rutinas(
+    id                      int(255) auto_increment not null,
+    paciente_id             int(255) not null,
+    rutina_id               int(255) not null,
+    CONSTRAINT pk_pacientes_has_rutinas PRIMARY KEY(id),
+    CONSTRAINT fk_pacientes_has_rutinas_pacientes FOREIGN KEY(paciente_id) REFERENCES pacientes(id),
+    CONSTRAINT fk_pacientes_has_rutinas_rutinas FOREIGN KEY(rutina_id) REFERENCES rutinas(id)
+)ENGINE=InnoDB;
+
 CREATE TABLE rutinas_has_ejercicios(
     id                      int(255) auto_increment not null,
     rutina_id               int(255) not null,

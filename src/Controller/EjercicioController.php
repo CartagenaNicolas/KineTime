@@ -47,10 +47,40 @@ class EjercicioController extends AbstractController
             $em = $this->getDoctrine()->getManager();
             $em->persist($ejercicio);
             $em->flush();
+            return $this->redirect($this->generateUrl('mantenedorEjercicios'));
         }
 
         return $this->render('ejercicio/agregarEjercicio.html.twig', [
             'form' => $form->createView(),
         ]);
+    }
+
+    public function listarEjercicios()
+    {
+
+        // Cargar Repositorios
+        $ejercicios_repo = $this->getDoctrine()->getRepository(Ejercicio::class);
+        $tipoEjercicio_repo = $this->getDoctrine()->getRepository(TipoEjercicio::class);
+
+        // Consulta
+        $ejercicios = $ejercicios_repo->findAll();
+        $tipoEjercicio = $tipoEjercicio_repo->findAll();
+
+        return $this->render('ejercicio/listarEjercicios.html.twig', [
+            'ejercicios' => $ejercicios
+        ]);
+    }
+
+    public function edit(Request $request, Ejercicio $ejercicio)
+    {
+
+    }
+
+    public function delete(Ejercicio $ejercicio)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($ejercicio);
+        $em->flush();
+        return $this->redirectToRoute('mantenedorEjercicios');
     }
 }

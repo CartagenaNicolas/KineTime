@@ -24,6 +24,7 @@
             {% else %}
                 <h4>El Paciente no es Bebedor</h4>
             {% endif %}
+            <a href="{{ path('planificacionEjercicios') }}{{ "/" }}{{ paciente.id }}">Planificar Rutina</a>
         </div>
     </main>
 {% endblock %}

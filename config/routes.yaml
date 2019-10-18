@@ -2,16 +2,27 @@
 #    path: /
 #    controller: App\Controller\DefaultController::index
 
-login:
+index:
     path: /
+    controller: App\Controller\KinesiologoController::inicio
+
+loginKinesiologo:
+    path: /login
     controller: App\Controller\KinesiologoController::login
 
+loginPaciente:
+    path: /login_paciente
+    controller: App\Controller\PacienteController::login
 logout:
     path: /logout
 
 home:
     path: /home
     controller: App\Controller\KinesiologoController::home
+
+homePaciente:
+    path: /home_paciente
+    controller: App\Controller\PacienteController::home
 
 agregarKinesiologo:
     path: /agregar_kinesiologo
@@ -42,3 +53,25 @@ datosPaciente:
     controller: App\Controller\PacienteController::dataPaciente
     defaults:
         paciente: 0
+
+planificacionEjercicios:
+    path: /planificacion_ejercicio/{paciente}
+    controller: App\Controller\PacienteController::planificacionPaciente
+    defaults:
+        paciente: 0
+
+mantenedorEjercicios:
+    path: /gestion_ejercicios
+    controller: App\Controller\EjercicioController::listarEjercicios
+
+editarEjercicio:
+    path: /editar_ejercicio/{id}
+    controller: App\Controller\EjercicioController:edit
+
+eliminarEjercicio:
+    path: /tarea/delete/{id}
+    controller: App\Controller\EjercicioController:delete
+
+registrarEjercicio:
+    path: /paciente/registrar
+    controller: App\Controller\PacienteController::registrarEjercicio

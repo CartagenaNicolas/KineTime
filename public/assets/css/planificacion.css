@@ -1,0 +1,33 @@
+main {
+    width: 100%;
+    float: left;
+    background: #C2D3FF;
+}
+
+main h2 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+main .planificacion {
+    background: #F5F3F3;
+    border: 1px solid #000;
+    border-radius: 10px;
+    margin: 5px;
+    overflow: hidden;
+    padding: 6px;
+}
+
+/*Comienzo Planificacio*/
+main .planificacion #myAccordion {
+    width: 400px;
+    float: left;
+    margin: 25px;
+}
+
+main .planificacion #recepcion {
+    width: 500px;
+    height: 400px;
+    border: 2px solid black;
+    float: left;
+}

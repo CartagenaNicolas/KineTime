@@ -102,8 +102,9 @@ class KinesiologoController extends AbstractController
         return $this->render('kinesiologo/chat.html.twig');
     }
 
-    /**
-     * @IsGranted("ROLE_USER")
-     */
+    public function inicio()
+    {
+        return $this->render('kinesiologo/index.html.twig');
+    }
     
 }

@@ -13,9 +13,14 @@
 
 {% block body %}
     <main>
-        <h2>Ingreso de Ejercicio</h2>
+        {% if edit is defined %}
+            <h2>Edicion del Ejercicio</h2>
+        {% else %}
+            <h2>Ingreso de Ejercicio</h2>
+        {% endif %}
+
         <div class="ficha">
-            <h3>Datos Personales</h3>
+            <h3>Datos Del Ejercicio</h3>
             {{ form_start(form) }}
             {{ form_widget(form) }}
             {{ form_end(form) }}

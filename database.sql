@@ -185,6 +185,15 @@ CREATE TABLE rutinas(
     CONSTRAINT pk_rutinas PRIMARY KEY(id)
 )ENGINE=InnoDB;
 
+CREATE TABLE pacientes_has_rutinas(
+    id                      int(255) auto_increment not null,
+    paciente_id             int(255) not null,
+    rutina_id               int(255) not null,
+    CONSTRAINT pk_pacientes_has_rutinas PRIMARY KEY(id),
+    CONSTRAINT fk_pacientes_has_rutinas_pacientes FOREIGN KEY(paciente_id) REFERENCES pacientes(id),
+    CONSTRAINT fk_pacientes_has_rutinas_rutinas FOREIGN KEY(rutina_id) REFERENCES rutinas(id)
+)ENGINE=InnoDB;
+
 CREATE TABLE rutinas_has_ejercicios(
     id                      int(255) auto_increment not null,
     rutina_id               int(255) not null,
@@ -228,3 +237,7 @@ INSERT INTO deportes VALUES (DEFAULT, "Tennis");
 INSERT INTO deportes VALUES (DEFAULT, "Basketball");
 INSERT INTO pacientes VALUES (DEFAULT, "20492942-4", "Alejandro Casas", 26, "Av. Concha Y Toro 2618", "Programador", "Si", "No");
 INSERT INTO antecedentes_clinicos VALUES (DEFAULT, "1", "No se que es", "Kevin Pizarro", 1, "No", "Paracetamol", "no se", NOW());
+INSERT INTO volumenes VALUES (DEFAULT, 3, 16);
+INSERT INTO rutinas VALUES (DEFAULT, null, 1, null,null,null);
+INSERT INTO rutinas_has_ejercicios VALUES (DEFAULT, 1,1);
+INSERT INTO pacientes_has_rutinas VALUES (DEFAULT, 1, 1);

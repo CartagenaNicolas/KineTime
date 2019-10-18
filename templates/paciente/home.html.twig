@@ -1,0 +1,17 @@
+{% extends 'basePaciente.html.twig' %}
+
+{% block body %}
+<main>
+    <h2>Bienvenido</h2>
+    <div class="ejercicios">
+        <h3>sus ejercicios son:</h3>
+        {% for ejercicio in ejercicios %}
+            <div class="ejercicios">
+                <span class="nombre">{{ ejercicio.nombre }}</span>
+                <span class="objetivo">{{ ejercicio.objetivo }}</span>
+                <a href="">Ver ejercicio</a>
+            </div>
+        {% endfor %}
+    </div>
+</main>
+{% endblock %}

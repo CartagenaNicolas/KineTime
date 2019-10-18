@@ -1,0 +1,37 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link href="{{ asset('assets/css/homeStyle.css') }}" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="{{ asset('assets/js/jquery.js') }}"></script>
+    <link href="{{ asset('assets/js/jquery-ui-1.12.1/jquery-ui.min.css') }}" type="text/css" rel="stylesheet" />
+    <link href="{{ asset('assets/js/jquery-ui-1.12.1/jquery-ui.structure.min.css') }}" type="text/css" rel="stylesheet" />
+    <link href="{{ asset('assets/js/jquery-ui-1.12.1/jquery-ui.theme.min.css') }}" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="{{ asset('assets/js/jquery-ui-1.12.1/jquery-ui.min.js') }}"></script>
+    <link href="{{ asset('assets/css/planificacion.css') }}" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="{{ asset('assets/js/planificacion.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+<main>
+    <h2>Planificacion del Paciente {{ paciente.nombre }}</h2>
+    <div class="planificacion">
+        <h2>Ejercicios</h2>
+        <div id="myAccordion">
+            {% for ejercicio in ejercicios %}
+                <h3>{{ ejercicio.tipoEjercicio.descripcion }}</h3>
+                <ul class="source">
+                    <li>{{ ejercicio.nombre }}</li>
+                </ul>
+            {% endfor %}
+        </div>
+        <div id="recepcion">
+            <h2>Recepcion de ejercicios</h2>
+            <ol id="items"></ol>
+        </div>
+    </div>
+</main>
+{% endblock %}

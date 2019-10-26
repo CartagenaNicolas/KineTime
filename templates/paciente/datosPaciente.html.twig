@@ -24,6 +24,34 @@
             {% else %}
                 <h4>El Paciente no es Bebedor</h4>
             {% endif %}
+            <hr>
+            <h3>Antecedentes Clinicos</h3>
+            <div class="morbilidad">
+                <h4>Morbilidad:</h4>
+                <p>{{ antecedentes.morbilidad }}</p>
+            </div>
+            <div class="medico">
+                <h4>Médico tratante:</h4>
+                <p>{{ antecedentes.medico }}</p>
+            </div>
+            <div class="zona">
+                <h4>Zona de la lesión:</h4>
+                <p>{{ antecedentes.zona.nombre }}</p>
+            </div>
+            <div class="operacion">
+                <h4>Operación en el paciente:</h4>
+                <p>{{ antecedentes.operacion }}</p>
+            </div>
+            <div class="factores">
+                <h4>Factores de riesgo:</h4>
+                <p>{{ antecedentes.factoresRiesgo }}</p>
+            </div>
+            <div class="episodio">
+                <h4>Cuando sucedio el accidente:</h4>
+                <p>{{ antecedentes.cuandoEpisodio }}</p>
+            </div>
+            <a href="{{ path('eliminarPaciente', {'paciente':paciente.id}) }}">Eliminar Paciente</a>
+            <a href="{{ path('editarPaciente', {'paciente':paciente.id}) }}">Modificar Datos</a>
             <a href="{{ path('planificacionEjercicios') }}{{ "/" }}{{ paciente.id }}">Planificar Rutina</a>
         </div>
     </main>

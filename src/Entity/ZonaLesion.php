@@ -31,7 +31,7 @@ class ZonaLesion
     private $nombre;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\AntecedenteClinico", mappedBy="zona")
+     * @ORM\OneToMany(targetEntity="App\Entity\AntecedentesClinicos", mappedBy="zona")
      */
     private $antecedenteClinico;
 
@@ -65,7 +65,7 @@ class ZonaLesion
         return $this->antecedenteClinico;
     }
 
-    public function addAntecedenteClinico(AntecedenteClinico $antecedenteClinico): self
+    public function addAntecedenteClinico(AntecedentesClinicos $antecedenteClinico): self
     {
         if (!$this->antecedenteClinico->contains($antecedenteClinico)) {
             $this->antecedenteClinico[] = $antecedenteClinico;
@@ -75,7 +75,7 @@ class ZonaLesion
         return $this;
     }
 
-    public function removeAntecedenteClinico(AntecedenteClinico $antecedenteClinico): self
+    public function removeAntecedenteClinico(AntecedentesClinicos $antecedenteClinico): self
     {
         if ($this->antecedenteClinico->contains($antecedenteClinico)) {
             $this->antecedenteClinico->removeElement($antecedenteClinico);

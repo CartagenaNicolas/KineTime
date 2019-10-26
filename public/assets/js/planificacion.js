@@ -1,6 +1,6 @@
 $(document).ready(function () {
     var URLactual = window.location.pathname;
-    var id = URLactual.substring(25, 26);
+    var id = URLactual.substring(25, 27);
 
     // Metodo Acordion
     $("#myAccordion").accordion();

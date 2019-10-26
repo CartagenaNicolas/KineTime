@@ -3,6 +3,10 @@ security:
         App\Entity\Kinesiologo:
             algorithm: auto
             cost: 12
+            
+        App\Entity\Paciente:
+            algorithm: auto
+            cost: 12
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
         in_memory: { memory: null }

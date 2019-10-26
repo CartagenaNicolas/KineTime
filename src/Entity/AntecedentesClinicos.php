@@ -45,28 +45,21 @@ class AntecedentesClinicos
     /**
      * @var string|null
      *
-     * @ORM\Column(name="farmacos", type="string", length=200, nullable=true)
-     */
-    private $farmacos;
-
-    /**
-     * @var string|null
-     *
      * @ORM\Column(name="factores_riesgo", type="string", length=200, nullable=true)
      */
     private $factoresRiesgo;
 
     /**
-     * @var \DateTime|null
+     * @var string|null
      *
-     * @ORM\Column(name="cuando_episodio", type="time", nullable=true)
+     * @ORM\Column(name="cuando_episodio", type="string", nullable=true)
      */
     private $cuandoEpisodio;
 
     /**
-     * @var \Pacientes
+     * @var \Paciente
      *
-     * @ORM\ManyToOne(targetEntity="Pacientes")
+     * @ORM\ManyToOne(targetEntity="Paciente")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="paciente_id", referencedColumnName="id")
      * })
@@ -76,7 +69,7 @@ class AntecedentesClinicos
     /**
      * @var \ZonaLesion
      *
-     * @ORM\ManyToOne(targetEntity="ZonaLesion")
+     * @ORM\ManyToOne(targetEntity="App\Entity\ZonaLesion", inversedBy="antecedenteClinico")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="zona_id", referencedColumnName="id")
      * })
@@ -124,18 +117,6 @@ class AntecedentesClinicos
         return $this;
     }
 
-    public function getFarmacos(): ?string
-    {
-        return $this->farmacos;
-    }
-
-    public function setFarmacos(?string $farmacos): self
-    {
-        $this->farmacos = $farmacos;
-
-        return $this;
-    }
-
     public function getFactoresRiesgo(): ?string
     {
         return $this->factoresRiesgo;
@@ -148,24 +129,24 @@ class AntecedentesClinicos
         return $this;
     }
 
-    public function getCuandoEpisodio(): ?\DateTimeInterface
+    public function getCuandoEpisodio()
     {
         return $this->cuandoEpisodio;
     }
 
-    public function setCuandoEpisodio(?\DateTimeInterface $cuandoEpisodio): self
+    public function setCuandoEpisodio($cuandoEpisodio): self
     {
         $this->cuandoEpisodio = $cuandoEpisodio;
 
         return $this;
     }
 
-    public function getPaciente(): ?Pacientes
+    public function getPaciente(): ?Paciente
     {
         return $this->paciente;
     }
 
-    public function setPaciente(?Pacientes $paciente): self
+    public function setPaciente(?Paciente $paciente): self
     {
         $this->paciente = $paciente;
 

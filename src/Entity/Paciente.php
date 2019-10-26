@@ -3,14 +3,15 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
- * Pacientes
+ * Paciente
  *
  * @ORM\Table(name="pacientes")
  * @ORM\Entity
  */
-class Paciente
+class Paciente implements UserInterface
 {
     /**
      * @var int
@@ -20,6 +21,20 @@ class Paciente
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="correo", type="string", length=255, nullable=false)
+     */
+    private $correo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="password", type="string", length=60, nullable=false)
+     */
+    private $password;
 
     /**
      * @var string
@@ -70,9 +85,40 @@ class Paciente
      */
     private $bebedor;
 
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="estado", type="boolean", nullable=false)
+     */
+    private $estado;
+
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getCorreo(): ?string
+    {
+        return $this->correo;
+    }
+
+    public function setCorreo(string $correo): self
+    {
+        $this->correo = $correo;
+
+        return $this;
+    }
+
+    public function getPassword(): ?string
+    {
+        return $this->password;
+    }
+
+    public function setPassword(string $password): self
+    {
+        $this->password = $password;
+
+        return $this;
     }
 
     public function getRut(): ?string
@@ -159,5 +205,29 @@ class Paciente
         return $this;
     }
 
+    public function getEstado(): ?bool
+    {
+        return $this->estado;
+    }
 
+    public function setEstado(bool $estado): self
+    {
+        $this->estado = $estado;
+
+        return $this;
+    }
+
+    public function getUsername() {
+        return $this->rut;
+    }
+
+    public function getSalt() {
+        return null;
+    }
+
+    public function getRoles() {
+        return array('ROLE_USER');
+    }
+
+    public function eraseCredentials() {}
 }

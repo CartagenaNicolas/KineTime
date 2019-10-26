@@ -13,7 +13,7 @@ use App\Form\EjercicioEditType;
 
 class EjercicioController extends AbstractController
 {
-
+    
     public function index()
     {
         return $this->render('ejercicio/index.html.twig', [
@@ -36,7 +36,7 @@ class EjercicioController extends AbstractController
         if($form->isSubmitted() && $form->isValid())
         {
             $video = $ejercicio->getVideo();
-
+            
             $upload_directory = $this->getParameter('uploads_directory');
 
             $filename =  md5(uniqid()) . '.' . $video->guessExtension();
@@ -47,7 +47,7 @@ class EjercicioController extends AbstractController
             );
 
             $ejercicio->setUrl("uploads/" . $filename);
-
+            
             $em = $this->getDoctrine()->getManager();
             $em->persist($ejercicio);
             $em->flush();

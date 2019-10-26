@@ -36,6 +36,10 @@ agregarPaciente:
     path: /agregar_paciente
     controller: App\Controller\PacienteController::addPaciente
 
+agregarAntecedentesClinicos:
+  path: /antecedentes_clinicos/{pacienteId}
+  controller: App\Controller\PacienteController::addAntecedentesClinicos
+
 listarPaciente:
     path: /listar_pacientes
     controller: App\Controller\PacienteController::listPacientes
@@ -54,6 +58,16 @@ datosPaciente:
     defaults:
         paciente: 0
 
+eliminarPaciente:
+    path: /eliminar_paciente/{paciente}
+    controller: App\Controller\PacienteController::deletePaciente
+    defaults:
+        paciente: 0
+        
+editarPaciente:
+    path: /editar_paciente/{paciente}
+    controller: App\Controller\PacienteController::editPaciente
+        
 planificacionEjercicios:
     path: /planificacion_ejercicio/{paciente}
     controller: App\Controller\PacienteController::planificacionPaciente
@@ -75,3 +89,5 @@ eliminarEjercicio:
 registrarEjercicio:
     path: /paciente/registrar
     controller: App\Controller\PacienteController::registrarEjercicio
+    
+

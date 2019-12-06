@@ -1,0 +1,29 @@
+{% extends 'basePaciente.html.twig' %}
+
+{% block body %}    
+<main>
+    {{ dump(rutina) }}
+    {{ dump(ejercicio) }}
+    {{ dump(paciente) }}
+    <p>
+        Sr/a. {{ paciente.nombre}} Le rogamos que su evaluación sea sincera y consciente. 
+        Si un ejercico le provoca mucho dolor puede agravar su lesión.
+    </p>
+    <datalist id="opciones">
+        <option value="1">
+        <option value="2">
+        <option value="3">
+        <option value="4">
+        <option value="5">
+        <option value="6">
+        <option value="7">
+        <option value="8">
+        <option value="9">
+        <option value="10">
+    </datalist>
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+    
+</main>
+{% endblock %}

@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Paciente;
+use App\Entity\PacienteHasKinesiologo;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
@@ -14,7 +15,11 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 class KinesiologoController extends AbstractController
 {
-    
+
+    public function inicioApp()
+    {
+        return $this->render('kinesiologo/index.html.twig');
+    }
 
     public function login(AuthenticationUtils $authenticationUtils) {
         $error = $authenticationUtils->getLastAuthenticationError();
@@ -102,9 +107,43 @@ class KinesiologoController extends AbstractController
         return $this->render('kinesiologo/chat.html.twig');
     }
 
-    public function inicio()
+    /**
+     * @IsGranted("ROLE_USER")
+     */
+    public function historialPaciente()
     {
-        return $this->render('kinesiologo/index.html.twig');
+        $usuario = $this->getUser();
+
+        $pacienteKine_repo = $this->getDoctrine()->getRepository(PacienteHasKinesiologo::class);
+        $paciente_repo = $this->getDoctrine()->getRepository(Paciente::class);
+
+        $paciente = $paciente_repo->findAll();
+        $PK = $pacienteKine_repo->findBy(['kinesiologo' => $usuario]);
+
+        return $this->render('kinesiologo/historialPaciente.html.twig', [
+            'historial' => $PK
+        ]);
+    }
+
+    /**
+     * @IsGranted("ROLE_USER")
+     */
+    public function calificacion(Paciente $paciente)
+    {
+        $usuario = $this->getUser();
+
+        $pacienteKine_repo = $this->getDoctrine()->getRepository(PacienteHasKinesiologo::class);
+        $PK = $pacienteKine_repo->findOneBy([
+            'kinesiologo' => $usuario->getId(),
+            'paciente' => $paciente->getId()
+        ]);
+        $historial = $pacienteKine_repo->findBy(['paciente' => $paciente->getId()]);
+
+        return $this->render('kinesiologo/calificacion.html.twig', [
+            'paciente' => $paciente,
+            'datos' => $PK,
+            'historial' => $historial
+        ]);
     }
     
 }

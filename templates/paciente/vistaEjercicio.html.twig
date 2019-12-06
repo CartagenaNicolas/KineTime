@@ -1,0 +1,15 @@
+{% extends 'basePaciente.html.twig' %}
+
+{% block body %}
+    <div class="ejercicio">
+        <h2>{{ ejercicio.nombre }}</h2>
+        <div class="detalle">
+            <video controls>
+                <source src="{{ asset(ejercicio.url) }}">
+            </video>
+            <div class="textos">
+                <p>Objetivo del ejercicio: {{ ejercicio.objetivo }}</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

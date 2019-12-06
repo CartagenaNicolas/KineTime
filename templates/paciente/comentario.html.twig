@@ -1,0 +1,10 @@
+{% extends 'basePaciente.html.twig' %}
+
+{% block body %}
+<main>
+    {{ dump(kine) }}
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+</main>
+{% endblock %}

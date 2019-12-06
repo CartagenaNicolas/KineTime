@@ -2,16 +2,20 @@
 
 {% block body %}
 <main>
-    <h2>Bienvenido</h2>
+    <h2>Bienvenido {{ usuario.nombre }}</h2>
+    {{ dump(ejercicios) }}
     <div class="ejercicios">
         <h3>sus ejercicios son:</h3>
-        {% for ejercicio in ejercicios %}
+        {% for rutina in rutinas %}
             <div class="ejercicios">
-                <span class="nombre">{{ ejercicio.nombre }}</span>
-                <span class="objetivo">{{ ejercicio.objetivo }}</span>
-                <a href="">Ver ejercicio</a>
+                <span class="nombre">{{ rutina.ejercicio.nombre }}</span>
+                <span class="objetivo">{{ rutina.ejercicio.objetivo }}</span>
+                <a href="{{ path('verEjercicio', {'ejercicio': rutina.ejercicio.id}) }}">Ver ejercicio</a>
             </div>
         {% endfor %}
+    </div>
+    <div class="comenzar">
+        <button><a href="{{ path('comenzarRutina', {'rutina': id_rutina.id, 'ejercicio': ejercicios[0].id }) }}">Comenzar rutina</a></button>
     </div>
 </main>
 {% endblock %}

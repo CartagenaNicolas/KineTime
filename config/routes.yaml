@@ -4,15 +4,12 @@
 
 index:
     path: /
-    controller: App\Controller\KinesiologoController::inicio
+    controller: App\Controller\KinesiologoController::inicioApp
 
 loginKinesiologo:
     path: /login
     controller: App\Controller\KinesiologoController::login
 
-loginPaciente:
-    path: /login_paciente
-    controller: App\Controller\PacienteController::login
 logout:
     path: /logout
 
@@ -89,5 +86,46 @@ eliminarEjercicio:
 registrarEjercicio:
     path: /paciente/registrar
     controller: App\Controller\PacienteController::registrarEjercicio
-    
 
+verEjercicio:
+  path: /paciente/ejercicio/{ejercicio}
+  controller: App\Controller\PacienteController::verEjercicio
+  defaults:
+    ejercicio: 0
+
+historialKinesiologo:
+  path: /paciente/historial_ejercicio/{paciente}
+  controller: App\Controller\PacienteController::historialKinesiologo
+  defaults:
+    paciente: 0
+
+dejarComentario:
+  path: /paciente/comentario/{kinesiologo}
+  controller: App\Controller\PacienteController::dejarComentario
+  defaults:
+    kinesiologo: 0
+
+historialPaciente:
+  path: /historial_paciente
+  controller: App\Controller\KinesiologoController::historialPaciente
+
+calificacion:
+  path: /calificacion/{paciente}
+  controller: App\Controller\KinesiologoController::calificacion
+  defaults:
+    paciente: 0
+
+comenzarRutina:
+  path: /paciente/rutina/{rutina}/{ejercicio}
+  controller: App\Controller\PacienteController::comenzarRutina
+  defaults:
+    rutina: 0
+    ejercicio: 0
+
+evaluarEjercicio:
+    path: /paciente/evaluarEjercicio/{ejercicio}/{paciente}/{rutina}
+    controller: App\Controller\PacienteController::evaluarEjercicio
+    defaults:
+        ejercicio: 0
+        paciente: 0
+        rutina: 0

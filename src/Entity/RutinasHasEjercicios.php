@@ -22,9 +22,9 @@ class RutinasHasEjercicios
     private $id;
 
     /**
-     * @var \Ejercicios
+     * @var \Ejercicio
      *
-     * @ORM\ManyToOne(targetEntity="Ejercicios")
+     * @ORM\ManyToOne(targetEntity="Ejercicio")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="ejercicio_id", referencedColumnName="id")
      * })
@@ -32,9 +32,9 @@ class RutinasHasEjercicios
     private $ejercicio;
 
     /**
-     * @var \Rutinas
+     * @var \Rutina
      *
-     * @ORM\ManyToOne(targetEntity="Rutinas")
+     * @ORM\ManyToOne(targetEntity="Rutina")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="rutina_id", referencedColumnName="id")
      * })
@@ -46,24 +46,24 @@ class RutinasHasEjercicios
         return $this->id;
     }
 
-    public function getEjercicio(): ?Ejercicios
+    public function getEjercicio(): ?Ejercicio
     {
         return $this->ejercicio;
     }
 
-    public function setEjercicio(?Ejercicios $ejercicio): self
+    public function setEjercicio(?Ejercicio $ejercicio): self
     {
         $this->ejercicio = $ejercicio;
 
         return $this;
     }
 
-    public function getRutina(): ?Rutinas
+    public function getRutina(): ?Rutina
     {
         return $this->rutina;
     }
 
-    public function setRutina(?Rutinas $rutina): self
+    public function setRutina(?Rutina $rutina): self
     {
         $this->rutina = $rutina;
 

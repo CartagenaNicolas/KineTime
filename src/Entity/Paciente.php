@@ -218,7 +218,7 @@ class Paciente implements UserInterface
     }
 
     public function getUsername() {
-        return $this->rut;
+        return $this->correo;
     }
 
     public function getSalt() {

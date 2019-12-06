@@ -20,30 +20,15 @@
             <div class="navegacion">
                 <nav>
                     <div class="dropdown">
-                        <button class="dropbtn">Paciente</button>
-                        <div class="dropdown-content">
-                            <a href="{{ path('agregarPaciente') }}">Ingreso Nuevo Paciente</a>
-                            <a href="{{ path('listarPaciente') }}">Ficha Paciente</a>
-                        </div>
-                    </div>
-                    <div class="dropdown">
                         <button class="dropbtn">Kinesiologo</button>
                         <div class="dropdown-content">
-                            <a href="{{ path('agregarKinesiologo') }}">Ingreso Nuevo Kinesiologo</a>
-                            <a href="{{ path('listarKinesiologo') }}">Kinesiologos</a>
+                            <a href="{{ path('historialKinesiologo', {'paciente': app.user.id}) }}">Historial de kinesiologos</a>
                         </div>
                     </div>
                     <div class="dropdown">
                         <button class="dropbtn">Mensajería</button>
                         <div class="dropdown-content">
                             <a href="{{ path('chat') }}">Chats</a>
-                        </div>
-                    </div>
-                    <div class="dropdown">
-                        <button class="dropbtn">Ejercicios</button>
-                        <div class="dropdown-content">
-                            <a href="{{ path('agregarEjercicio') }}">Agregar Ejercicios</a>
-                            <a href="{{ path('mantenedorEjercicios') }}">Gestionar Ejercicios</a>
                         </div>
                     </div>
                     <div class="dropdown">

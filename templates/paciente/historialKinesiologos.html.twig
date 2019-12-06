@@ -1,0 +1,29 @@
+{% extends'basePaciente.html.twig' %}
+
+{% block body %}
+<main>
+    <h2>Historial de kinesiologos</h2>
+
+    <div class="activos">
+        <h4>Especialista que estan trabajando con usted</h4>
+        {% for historia in historial %}
+            {% if historia.estado == true %}
+                <span class="nombre">Nombre: {{ historia.kinesiologo.nombre }}</span>
+                <span class="especialidad">Especialidad: {{ historia.kinesiologo.especialidad }}</span>
+                <span class="comentario"><a href="{{ path('dejarComentario', {'kinesiologo': historia.kinesiologo.id}) }}">Dejar comentario</a></span>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <hr>
+    <div class="terminado">
+        <h4>Especialista que ya no estan trabajando con usted</h4>
+        {% for historia in historial %}
+            {% if historia.estado == false %}
+                <span class="nombre">Nombre: {{ historia.kinesiologo.nombre }}</span>
+                <span class="especialidad">Especialidad: {{ historia.kinesiologo.especialidad }}</span>
+                <span class="comentario"><a href="{{ path('dejarComentario', {'kinesiologo': historia.kinesiologo.id}) }}">Dejar comentario</a></span>
+            {% endif %}
+        {% endfor %}
+    </div>
+</main>
+{% endblock %}

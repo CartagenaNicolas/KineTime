@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}KineTime{% endblock %}</title>
+        {% block stylesheets %}
+            <link href="{{ asset('assets/css/style.css') }}" type="text/css" rel="stylesheet" />
+            <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}
+        <div class="login">
+            <br>
+            <h2>Bienvenido a KineTime</h2>
+            <br>
+            <img src="http://comunasweb.com.ar/wp-content/uploads/2019/04/WEB-dia-del-kinesiologo-02.png" alt="W3Schools.com" style="width:300px;height:140px;">
+            <form method="post">
+                <!--
+                {% if error %}
+                    <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                {% endif %}
+
+                {% if app.user %}
+                    <div class="mb-3">
+                        You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+                    </div>
+                {% endif %}
+            -->
+                <br>
+                <label for="inputCorreo"><i class='fas fa-user'></i> Correo:</label>
+                <br>
+                <input type="text" value="{{ last_username }}" name="correo" id="inputCorreo" class="login-input" required autofocus>
+                <br>
+                <label for="inputPassword"><i class='fas fa-lock'></i> Constraseña</label>
+                <br>
+                <input type="password" name="password" id="inputPassword" class="login-input" required>
+                <br>
+
+                <input type="hidden" name="_csrf_token"
+                    value="{{ csrf_token('authenticate') }}"
+                >
+
+                {#
+                    Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+                    See https://symfony.com/doc/current/security/remember_me.html
+
+                    <div class="checkbox mb-3">
+                        <label>
+                            <input type="checkbox" name="_remember_me"> Remember me
+                        </label>
+                    </div>
+                #}
+
+                <input type="submit" value="Entrar" id="entrar"/>
+            </form>
+        </div>
+        {% endblock %}
+    </body>
+</html>
